@@ -1,0 +1,209 @@
+#modal {
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  &.open {
+    display: flex;
+    .modalContainer {
+      width: 100%;
+      height: 100%;
+      padding: 5%;
+      display: flex;
+      flex-direction: column;
+      #exit {
+        position: absolute;
+        height: 15px;
+        width: 15px;
+        top: 1%;
+        right: 1%;
+        border-radius: 50%;
+        background: lightgray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 2vw;
+      }
+      h3 {
+        border-bottom: 2px black solid;
+        margin-bottom: 5%;
+        span.modal-header {
+          font-size: 4vw;
+          border-bottom: 3px blue solid;
+        }
+      }
+      h4.modal-subheader {
+        display: none;
+      }
+      #addOns {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 4%;
+        .product {
+          height: 25%;
+          width: 100%;
+          display: flex;
+          padding: 5%;
+          border-bottom: 2px solid black;
+          .img {
+            width: 20%;
+            margin-right: 5%;
+            img {
+              width: 100%;
+            }
+          }
+          .productDetails {
+            width: 75%;
+            .productName {
+              font-size: 1.8vw;
+              font-weight: bold;
+              margin-bottom: 2%;
+              text-transform: capitalize;
+            }
+            .productId {
+              font-size: 2vw;
+              text-transform: uppercase;
+              margin-bottom: 2%;
+            }
+            .productPrice {
+              font-size: 4vw;
+              margin-bottom: 3%;
+            }
+            .addToCart {
+              font-size: 2.2vw;
+            }
+          }
+        }
+      }
+      .addAllBtn {
+        height: 5%;
+        width: 100%;
+        background: blue;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        margin-bottom: 5%;
+        font-size: 3vw;
+      }
+      .footer {
+        height: 10%;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        span {
+          margin-right: 10%;
+          text-decoration: underline;
+          text-transform: capitalize;
+        }
+        .checkOut {
+          color: blue;
+          padding: 2%;
+          border: 2px solid blue;
+          font-size: 2.5vw;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  &.close {
+    display: none;
+    .modalContainer {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #modal {
+    height: 95%;
+    top: 2.5%;
+    bottom: 2.5%;
+    left: 2.5%;
+    right: 2.5%;
+    width: 95%;
+    &.open {
+      .modalContainer {
+        padding: 2%;
+        #exit {
+          height: 25px;
+          width: 25px;
+          font-size: 1vw;
+          cursor: pointer;
+        }
+        h3 {
+          margin-bottom: 1%;
+        }
+        h4.modal-subheader {
+          display: inline-block;
+          font-size: 2vw;
+          margin-bottom: 1%;
+          span {
+            font-weight: bold;
+          }
+        }
+        #addOns {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: baseline;
+          margin-bottom: 1.5%;
+          .product {
+            flex-direction: column;
+            height: 100%;
+            padding: 0;
+            width: 20%;
+            border: none;
+            .img {
+              width: 100%;
+              margin-right: 0;
+              margin-bottom: 1%;
+            }
+            .productDetails {
+              width: 100%;
+              .productName {
+                font-size: 1vw;
+              }
+              .productId {
+                font-size: 1vw;
+              }
+              .productPrice {
+                font-size: 1vw;
+              }
+              .addToCart {
+                font-size: 1vw;
+                background: blue;
+                color: white;
+                padding: 1%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+            }
+          }
+        }
+        .addAllBtn {
+          padding: 1.5%;
+          font-size: 1.7vw;
+          margin-bottom: 2.5%;
+        }
+        footer {
+          span.exit {
+            margin-right: 5%;
+            cursor: pointer;
+          }
+          .checkOut {
+            padding: 0.5%;
+            font-size: 1vw;
+          }
+        }
+      }
+    }
+  }
+}
